@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css?v=3.1">
+</head>
+<body>
+    <!-- Barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="/static/images/logo.png" alt="Ecocrib Logo" style="height: 40px; margin-right: 10px;">
+                Ecocrib
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="/">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/consommation">Consommation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/economies">Économies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/capteurs">Capteurs</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/configuration">Configuration</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container mt-4">
+        <h2 class="text-center mb-5">Configuration</h2>
+        <img src="/static/images/config.png" alt="Logo Configuration" class="d-block mx-auto" style="height: 100px; width: auto;">
+        
+        <p class="text-center">Ajoutez des logements, des pièces, des capteurs et des factures pour gérer votre maison.</p>
+
+        <!-- Section des formulaires -->
+        <div class="row justify-content-center">
+            <!-- Logement Form -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">Ajouter un Logement</div>
+                    <div class="card-body">
+                        <form id="addLogementForm">
+                            <div class="mb-3">
+                                <label for="nomLogement" class="form-label">Nom du Propriétaire</label>
+                                <input type="text" class="form-control" id="nomLogement" placeholder="Entrez le nom du propriétaire" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="adresseLogement" class="form-label">Adresse</label>
+                                <input type="text" class="form-control" id="adresseLogement" placeholder="Entrez l'adresse" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Ajouter Logement</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pièce Form -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-warning text-white text-center">Ajouter une Pièce</div>
+                    <div class="card-body">
+                        <form id="addPieceForm">
+                            <div class="mb-3">
+                                <label for="logementPiece" class="form-label">Logement</label>
+                                <select id="logementPiece" class="form-select" required>
+                                    <option value="" disabled selected>Choisir un logement</option>
+                                    <!-- Options dynamiques -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nomPiece" class="form-label">Nom de la Pièce</label>
+                                <input type="text" class="form-control" id="nomPiece" placeholder="Entrez le nom de la pièce" required>
+                            </div>
+                            <button type="submit" class="btn btn-warning w-100">Ajouter Pièce</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Capteur Form -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-success text-white text-center">Ajouter un Capteur</div>
+                    <div class="card-body">
+                        <form id="addCapteurForm">
+                            <div class="mb-3">
+                                <label for="capteurLogement" class="form-label">Logement</label>
+                                <select id="capteurLogement" class="form-select" required>
+                                    <option value="" disabled selected>Choisir un logement</option>
+                                    <!-- Options dynamiques -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="capteurPiece" class="form-label">Pièce</label>
+                                <select id="capteurPiece" class="form-select" required>
+                                    <option value="" disabled selected>Choisir une pièce</option>
+                                    <!-- Options dynamiques -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="capteurNom" class="form-label">Type de Capteur</label>
+                                <select id="capteurType" class="form-select" required>
+                                <option value="" disabled selected>Choisir un type de capteur</option>
+                                <!-- Les types de capteurs doivent être chargés dynamiquement depuis l'API -->
+                            </select>
+                            </div>
+                            
+                            <!--
+                            <div class="mb-3">
+                                <label for="capteurType" class="form-label">Type de Capteur</label>
+                                <input type="text" class="form-control" id="capteurType" placeholder="Entrez le type du capteur" required>
+                            </div>
+                            -->
+                            <button type="submit" class="btn btn-success w-100">Ajouter Capteur</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Facture Form -->
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-danger text-white text-center">Ajouter une Facture</div>
+                    <div class="card-body">
+                        <form id="addFactureForm">
+                            <div class="mb-3">
+                                <label for="factureLogement" class="form-label">Logement</label>
+                                <select id="factureLogement" class="form-select" required>
+                                    <option value="" disabled selected>Choisir un logement</option>
+                                    <!-- Options dynamiques -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="factureType" class="form-label">Type de Facture</label>
+                                <div class="input-group">
+                                    <select id="factureType" class="form-select" required>
+                                        <option value="" disabled selected>Choisir un type</option>
+                                        <!-- Options dynamiques -->
+                                    </select>
+                                    <button type="button" id="addFactureType" class="btn btn-outline-danger">+</button>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="factureMontant" class="form-label">Montant</label>
+                                <input type="number" class="form-control" id="factureMontant" placeholder="Entrez le montant" required>
+                            </div>
+                            <button type="submit" class="btn btn-danger w-100">Ajouter Facture</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Pied de page -->
+    <footer class="text-center bg-light py-3 mt-5">
+        <p>&copy; 2024 Logement Éco-responsable</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/configuration.js"></script>
+</body>
+</html>

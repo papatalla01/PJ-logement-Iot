@@ -1,0 +1,203 @@
+/* Importation des Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Style global */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: url('/static/images/font.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #000; /* Texte en noir */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Hauteur minimale pour occuper toute la page */
+}
+
+/* Conteneur du logo */
+.logo-container {
+    text-align: center;
+    margin-top: 10px; /* Espacement au-dessus du logo */
+    margin-bottom: 10px; /* Espacement entre le logo et la barre de navigation */
+}
+
+.logo-container .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    font-size: 2rem; /* Taille du texte du logo */
+    font-weight: bold;
+    color: #000; /* Texte en noir */
+    text-decoration: none;
+}
+
+.logo-container .navbar-brand img {
+    height: 60px; /* Taille de l'image du logo */
+    margin-right: 10px;
+}
+
+/* Navigation */
+.navbar {
+    background-color: #66bb6a; /* Vert moyen */
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+    justify-content: center; /* Centre le contenu horizontalement */
+    padding: 1rem 0; /* Ajuster la hauteur de la barre */
+}
+
+.navbar-nav {
+    margin: auto; /* Centre les liens horizontalement */
+}
+
+.navbar-nav .nav-link {
+    color: #000 !important; /* Noir pour tous les liens */
+    font-size: 1.2rem; /* Augmentation de la taille du texte */
+    padding: 0.5rem 1rem; /* Ajout d'espacement */
+    border-radius: 50px; /* Forme ovale */
+    transition: all 0.3s ease; /* Transition douce */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #2e7d32 !important; /* Vert foncé au survol */
+}
+
+.navbar-nav .nav-link.active {
+    color: white !important;
+    background-color: #2e7d32 !important; /* Vert foncé pour le lien actif */
+    border-radius: 50px; /* Forme ovale pour le lien actif */
+}
+
+/* Conteneur principal */
+.container {
+    flex: 1; /* Le conteneur principal occupe l'espace restant */
+    padding: 5vh;
+    background: white;
+    border-radius: 1vh;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+}
+
+/* Titres */
+h1, h2 {
+    color: #000; /* Texte en noir */
+    margin-bottom: 3vh;
+    text-align: center;
+    font-size: 3.5vh;
+}
+
+/* Boutons */
+.btn-primary {
+    background-color: #66bb6a; /* Vert moyen */
+    border: none;
+    border-radius: 2vh;
+    padding: 1.5vh 3vh;
+    font-size: 2vh;
+    color: #000; /* Texte en noir */
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #43a047; /* Vert foncé */
+    transform: scale(1.05);
+}
+
+/* Tableaux */
+.table {
+    background: white;
+    border-radius: 1vh;
+    overflow: hidden;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+    margin-top: 2vh;
+}
+
+.table thead {
+    background-color: #66bb6a; /* Vert moyen */
+    color: #000; /* Texte en noir */
+    font-size: 2vh;
+}
+
+.table tbody tr:hover {
+    background-color: #e8f5e9; /* Vert très clair */
+}
+
+/* Graphiques */
+canvas {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 50vh;
+}
+
+/* Pied de page */
+footer {
+    background-color: #66bb6a; /* Vert moyen */
+    color: #000; /* Texte en noir */
+    padding: 2vh;
+    text-align: center;
+    font-size: 1.8vh;
+    margin-top: auto; /* Maintenir le footer au bas de la page */
+}
+
+.list-group-item.active {
+    background-color: #66bb6a; /* Vert moyen */
+    border-color: #43a047; /* Vert foncé */
+}
+
+.bg-primary {
+    background-color: #66bb6a !important; /* Vert moyen */
+}
+
+.text-primary {
+    color: #2e7d32 !important; /* Vert foncé */
+}
+
+/* Forcer les dimensions uniformes des cartes */
+.row .col-md-6.col-lg-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.row .col-md-6.col-lg-4 .card {
+    height: 100%; /* La carte remplit la hauteur de sa colonne */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 2vh;
+    box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.1);
+    border-radius: 1vh;
+}
+
+/* Fixer la hauteur pour les cartes de la rangée supérieure */
+.row .col-md-6.col-lg-4 {
+    flex: 1 1 auto; /* Les colonnes prennent toute la hauteur disponible */
+    min-height: 50vh; /* Hauteur uniforme minimale */
+}
+
+/* Ajuster la carte des factures */
+.row .col-md-12 .card {
+    height: auto; /* La carte dépend de son contenu */
+}
+
+/* Style pour le sélecteur */
+#logementSelect {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Style pour les détails du logement */
+#logementDetails h3, #logementDetails h4 {
+    margin-top: 20px;
+    color: #2e7d32; /* Vert foncé */
+}
+
+#chartContainer,
+#evolutionChartContainer {
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
